@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import useDarkMode from './Hooks/useDarkMode';
 
+export const checkText = currentText => {
+    return currentText;
+}
+
+
 const Header = () =>{
 
     const Headers = styled.div`
@@ -27,7 +32,8 @@ const Header = () =>{
             <button 
             onClick={toggleButton}
             className={darkMode ? 'button-darkMode' : ''}
-            >{buttonText}</button>
+            data-testid="change"
+            >{checkText(buttonText)}</button>
         </Headers>
     )
 }
